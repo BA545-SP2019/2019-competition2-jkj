@@ -12,9 +12,9 @@ features = tpot_data.drop('target', axis=1).values
 training_features, testing_features, training_target, testing_target = \
             train_test_split(features, tpot_data['target'].values, random_state=None)
 
-# Average CV score on the training set was:0.7567618699583566
+# Average CV score on the training set was:0.7533502552982452
 exported_pipeline = make_pipeline(
-    StackingEstimator(estimator=DecisionTreeClassifier(criterion="entropy", max_depth=6, min_samples_leaf=20, min_samples_split=15)),
+    StackingEstimator(estimator=DecisionTreeClassifier(criterion="entropy", max_depth=7, min_samples_leaf=4, min_samples_split=5)),
     GaussianNB()
 )
 
